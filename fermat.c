@@ -44,7 +44,6 @@ main()
 		if (flag == 0)
 		{
 			determ_counter ++;
-			//printf ("Primer: %d \n", i);
 		}
 		
 		}
@@ -75,10 +74,6 @@ main()
 			while (k<= i && flag == 0)
 			{
 					a = (rand() % (j - 1)) + 1;
-				//	printf (" checking for primality: %d \n", j);
-					//printf (" try %d \n", k);
-					//printf (" flag %d \n",flag);
-					//printf (" random number %d \n", a);
 					long long fermat_result = 1;
 					long long base = a%j;
 					int exponent = j-1;
@@ -89,16 +84,8 @@ main()
 							fermat_result = (fermat_result*base) % j;
 						}
 						exponent = exponent >> 1;
-					//	printf (" exponent %d \n",exponent);
 						base = (base*base )% j;	
 					}
-				/*	for (e=1; e<=(j-1)/2; e++)
-					{
-						c = c * (a%j);
-						
-					}
-					c = c%j;
-					printf("c %d\n", c);*/
 					if (fermat_result!=1)
 					{
 						flag =1;
@@ -106,14 +93,12 @@ main()
 					else 
 					{
 						flag = 0;
-						//printf("inside else \n");
 						k++;
 					}
 			}				
 			if (flag == 0)
 			{
 				prob_counter ++;
-			//	printf (" %d is primer \n", j);
 			}
 					
 		}
@@ -124,24 +109,3 @@ main()
 	
 }
 
-
-
-	
-	
-	
-	
-/*		
-		
-			{
-				
-				srand((unsigned int) curtime);
-				
-				if (i%divisor!=0)
-				{
-					determ_counter ++;
-				}	if ((a^(j-1))%j != 1)
-			}
-		}	
-	
-	
-} */
